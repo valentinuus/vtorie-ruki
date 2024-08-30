@@ -134,7 +134,7 @@ legend {
 @font-face {
   font-family: "TildaSans";
   font-display: swap;
-  src: url("../fonts/Montserrat-Medium.woff") format("woff"), url("../fonts/Montserrat-Medium.woff2") format("woff2");
+  src: url("../fonts/TildaSans-Medium.woff") format("woff"), url("../fonts/TildaSans-Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
 }
@@ -211,9 +211,9 @@ body,
   color: var(--dark);
 }
 
-@media (max-width: 690px) {
+@media (max-width: 760px) {
   .title-deskr {
-    left: 10px;
+    left: 15px;
     top: 75px;
   }
 }
@@ -247,6 +247,46 @@ body,
 }
 .link-too:hover svg {
   stroke: #fff;
+}
+
+.social {
+  margin-top: 76px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 6px;
+     -moz-column-gap: 6px;
+          column-gap: 6px;
+}
+
+.social__link {
+  position: relative;
+  display: block;
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  background-color: transparent;
+  border: 1px solid var(--accent);
+  -webkit-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+.social__link svg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  fill: var(--accent);
+  -webkit-transition: fill 0.3s ease-in-out;
+  transition: fill 0.3s ease-in-out;
+}
+
+.social__link:hover {
+  background-color: var(--accent);
+}
+.social__link:hover svg {
+  fill: #fff;
 }
 
 /* Контейнеры */
@@ -425,7 +465,7 @@ body,
   content: "";
   position: absolute;
   left: 0;
-  top: 50%;
+  top: 54%;
   -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -505,35 +545,6 @@ body,
 
 .stop--scroll {
   overflow: hidden;
-}
-
-.social {
-  margin-top: 76px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-column-gap: 6px;
-     -moz-column-gap: 6px;
-          column-gap: 6px;
-}
-
-.social__link {
-  position: relative;
-  display: block;
-  border-radius: 50%;
-  width: 64px;
-  height: 64px;
-  background-color: transparent;
-  border: 1px solid var(--accent);
-}
-.social__link svg {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  fill: var(--accent);
 }
 
 .header__social {
@@ -628,6 +639,7 @@ body,
 
 .hero__info {
   position: absolute;
+  z-index: 2;
 }
 
 .hero__social {
@@ -1227,6 +1239,10 @@ body,
     max-width: calc(100% - 55px);
   }
 }
+.faq {
+  margin-bottom: 120px;
+}
+
 .faq__wrap {
   position: relative;
 }
@@ -1243,70 +1259,127 @@ body,
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-column-gap: 16px;
+     -moz-column-gap: 16px;
+          column-gap: 16px;
 }
 
-.accordion button {
+.faq__data-foto {
+  position: relative;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 2 50%;
+          flex: 0 2 50%;
+  padding-top: 27px;
+  height: 500px;
+}
+.faq__data-foto img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background-position: center;
+}
+
+.accordion {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
+}
+
+.accordion__item {
+  border-bottom: 1px solid #e6e6e6;
+  -webkit-transition: border-color 0.3s ease-in-out;
+  transition: border-color 0.3s ease-in-out;
+}
+.accordion__item:hover {
+  border-color: var(--accent);
+}
+
+.accordion__item:hover .accordion__icon,
+.accordion__item:hover .accordion__title {
+  color: var(--accent);
+}
+
+.accordion__btn {
   position: relative;
   display: block;
   text-align: left;
   width: 100%;
-  padding: 1em 0;
-  font-size: 1.15rem;
-  font-weight: 400;
-  border: none;
   background: none;
   outline: none;
+  padding: 27px 0 22px;
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--dark);
 }
-.accordion button:hover, .accordion button:focus {
-  cursor: pointer;
+
+.accordion__title {
+  display: block;
+  -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+  width: calc(100% - 60px);
 }
-.accordion button:hover::after, .accordion button:focus::after {
-  cursor: pointer;
-}
-.accordion button .accordion-title {
-  padding: 1em 1.5em 1em 0;
-}
-.accordion button .icon {
+
+.accordion__icon {
   display: inline-block;
   position: absolute;
   top: 18px;
   right: 0;
-  width: 22px;
-  height: 22px;
-  border: 1px solid;
-  border-radius: 22px;
+  width: 24px;
+  height: 24px;
+  color: var(--dark);
+  -webkit-transition: color 0.3s ease-in-out, rotate 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out, rotate 0.3s ease-in-out;
 }
-.accordion button .icon::before {
+.accordion__icon::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+}
+.accordion__icon::after {
   display: block;
   position: absolute;
   content: "";
-  top: 9px;
-  left: 5px;
-  width: 10px;
-  height: 2px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 1px;
+  height: 100%;
   background: currentColor;
 }
-.accordion button .icon::after {
-  display: block;
-  position: absolute;
-  content: "";
-  top: 5px;
-  left: 9px;
-  width: 2px;
-  height: 10px;
-  background: currentColor;
+
+.accordion__content {
+  width: calc(100% - 60px);
 }
-.accordion button[aria-expanded=true] .icon::after {
-  width: 0;
+
+.accordion button[aria-expanded=true] {
+  color: var(--accent);
 }
-.accordion button[aria-expanded=true] + .accordion-content {
+.accordion button[aria-expanded=true] .accordion__icon {
+  rotate: 45deg;
+  color: var(--accent);
+}
+.accordion button[aria-expanded=true] + .accordion__content {
   opacity: 1;
   max-height: 9em;
   -webkit-transition: all 200ms linear;
   transition: all 200ms linear;
   will-change: opacity, max-height;
 }
-.accordion .accordion-content {
+.accordion .accordion__content {
   opacity: 0;
   max-height: 0;
   overflow: hidden;
@@ -1314,13 +1387,124 @@ body,
   transition: opacity 200ms linear, max-height 200ms linear;
   will-change: opacity, max-height;
 }
-.accordion .accordion-content p {
-  font-size: 1rem;
-  font-weight: 300;
-  margin: 2em 0;
+.accordion .accordion__content p {
+  padding-bottom: 14px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  color: var(--dark);
 }
 
-footer p {
-  font-size: 25px;
-  color: purple;
+@media (max-width: 960px) {
+  .faq__data {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .faq__data-foto {
+    margin-top: 20px;
+    position: relative;
+    padding-bottom: 80%;
+  }
+  .accordion {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 50%;
+            flex: 0 1 50%;
+  }
+}
+@media (max-width: 640px) {
+  .faq {
+    margin-bottom: 100px;
+  }
+  .faq__data-foto {
+    margin-top: 60px;
+  }
+}
+.footer__wrap {
+  position: relative;
+}
+
+.footer__title {
+  max-width: 490px;
+}
+
+.footer__title-deskr {
+  top: 78px;
+}
+
+.footer__tel-block {
+  margin-bottom: 40px;
+}
+
+.footer__tel {
+  display: block;
+  font-size: 52px;
+  line-height: 150%;
+  color: var(--dark);
+}
+
+.footer__social {
+  position: absolute;
+  right: 15px;
+  top: 0px;
+  margin-top: 0;
+}
+
+.footer__map {
+  position: relative;
+}
+
+.footer__katalog {
+  top: 0;
+  left: calc(100% - 97px);
+}
+
+@media (max-width: 960px) {
+  .footer__tel-block {
+    margin: 56px 0 188px 0;
+  }
+  .footer__tel {
+    font-size: 40px;
+  }
+  .footer__social {
+    top: 180px;
+  }
+  .footer__title-deskr {
+    top: 255px;
+  }
+  .hero__katalog {
+    left: 50%;
+  }
+}
+@media (max-width: 759px) {
+  .footer__title-deskr {
+    right: 20px;
+    left: auto;
+  }
+}
+@media (max-width: 660px) {
+  .footer__tel-block {
+    margin: 91px 0 204px 0;
+  }
+  .footer__tel {
+    font-size: 32px;
+  }
+  .footer__title-deskr {
+    right: auto;
+    left: 15px;
+    top: 105px;
+  }
+  .footer__social {
+    left: 15px;
+    top: 300px;
+  }
+}
+@media (max-width: 640px) {
+  .footer__title-deskr {
+    top: 70px;
+  }
+  .footer__social {
+    top: 260px;
+  }
 }
