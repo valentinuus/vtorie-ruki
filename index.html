@@ -7,6 +7,7 @@
     <title></title>
     <meta name="description" content="">
     <meta name="keywords" content="">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="css/libs/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/style.min.css">
   </head>
@@ -17,10 +18,10 @@
           <div class="header__menu">
             <nav class="nav" data-nav>
               <ul class="nav__list">
-                <li class="nav__item"><a class="nav__link" href="#">Залог и выкуп</a></li>
-                <li class="nav__item"><a class="nav__link" href="#">Отзывы</a></li>
-                <li class="nav__item"><a class="nav__link" href="#">FAQ</a></li>
-                <li class="nav__item"><a class="nav__link" href="#">Контакты</a></li>
+                <li class="nav__item"><a class="nav__link" href="#">Залог и выкуп<span class="link-after">Залог и выкуп</span><span class="link-before">Залог и выкуп</span></a></li>
+                <li class="nav__item"><a class="nav__link" href="#">Отзывы<span class="link-after">Отзывы</span><span class="link-before">Отзывы</span></a></li>
+                <li class="nav__item"><a class="nav__link" href="#">FAQ<span class="link-after">FAQ</span><span class="link-before">FAQ</span></a></li>
+                <li class="nav__item"><a class="nav__link" href="#">Контакты<span class="link-after">Контакты</span><span class="link-before">Контакты</span></a></li>
               </ul>
               <div class="header__phone_menu"><a class="header__phone-link_menu" href="tel:+79662866665">+7 (966) 286-66-65</a><a class="header__phone-link_menu" href="tel:+79662866665">+7 (966) 286-66-65</a></div>
               <div class="header__social social"> 
@@ -45,6 +46,7 @@
       </div>
     </header>
     <main class="main">
+      <div class="cursor-follower"></div>
       <section class="hero">
         <div class="hero__wrap container">
           <div class="hero__info"> 
@@ -78,8 +80,8 @@
                 <div class="swiper-slide"><img src="img/06.jpg" alt=""></div>
               </div>
             </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next target"></div>
+            <div class="swiper-button-prev target"></div>
             <div class="swiper swiper-main">
               <div class="swiper-wrapper swiper-main__swiper-wrapper">
                 <div class="swiper-slide swiper-slide-main"><img src="img/02.jpg" alt=""></div>
@@ -91,7 +93,7 @@
               </div>
             </div>
             <div class="swiper-scrollbar"></div>
-          </div><a class="hero__katalog" href="#">Смотреть каталог</a>
+          </div><a class="hero__katalog" target="_blank" href="https://polombardam.shop/merchant/18854">Смотреть каталог</a>
         </div>
       </section>
       <section class="service">
@@ -177,13 +179,13 @@
               <div class="accordion__item">
                 <button class="accordion__btn" id="accordion-button-1" aria-expanded="false"><span class="accordion__title">На какой срок можно заложить товар?</span><span class="accordion__icon" aria-hidden="true"></span></button>
                 <div class="accordion__content">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.</p>
+                  <p>Максимальный срок залога: 12 дней. Его можно продлить оплатив проценты.</p>
                 </div>
               </div>
               <div class="accordion__item">
                 <button class="accordion__btn" id="accordion-button-2" aria-expanded="false"><span class="accordion__title">Принимаем ли мы технику с дефектами?</span><span class="accordion__icon" aria-hidden="true"></span></button>
                 <div class="accordion__content">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.</p>
+                  <p>Мы принимаем технику, только в полностью рабочем состоянии и в удвалитворительном внешнем виде.</p>
                 </div>
               </div>
               <div class="accordion__item">
@@ -195,25 +197,25 @@
               <div class="accordion__item">
                 <button class="accordion__btn" id="accordion-button-4" aria-expanded="false"><span class="accordion__title">Какие вещи мы не принимаем?</span><span class="accordion__icon" aria-hidden="true"></span></button>
                 <div class="accordion__content">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.</p>
+                  <p>Мы не принимаем такие вещи как: куртки, пиджаки, брюки, туфли и другие атрибуты одежды.</p>
                 </div>
               </div>
               <div class="accordion__item">
                 <button class="accordion__btn" id="accordion-button-5" aria-expanded="false"><span class="accordion__title">После истечения срока залога возможно ли выкупить товар?</span><span class="accordion__icon" aria-hidden="true"></span></button>
                 <div class="accordion__content">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.</p>
+                  <p>Если ваш товар вышел из залога, но еще не реализован, вы можете приобрести его у нас, с хорошей скидкой.</p>
                 </div>
               </div>
               <div class="accordion__item">
                 <button class="accordion__btn" id="accordion-button-6" aria-expanded="false"><span class="accordion__title">Принимаем ли мы товары на реализацию?</span><span class="accordion__icon" aria-hidden="true"></span></button>
                 <div class="accordion__content">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.</p>
+                  <p>Мы не принимаем товары на реализацию. Вы можете принести товар, котрый хотите продать нам на оценку и мы сразу выкупим его.</p>
                 </div>
               </div>
               <div class="accordion__item">
                 <button class="accordion__btn" id="accordion-button-7" aria-expanded="false"><span class="accordion__title">Что требуется для того, чтобы заложить товар?</span><span class="accordion__icon" aria-hidden="true"></span></button>
                 <div class="accordion__content">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.</p>
+                  <p>Для того, что бы сдать товар в залог от вас потребуется только ваш паспорт и товар в надлежащем виде.</p>
                 </div>
               </div>
             </div>
@@ -242,11 +244,12 @@
           </div>
         </div>
         <div class="footer__map">
-          <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A3ed61c2ea4c7b6bd938eacd3968227e75815c5337bf9a4eacd8f309572e0ade9&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe><a class="hero__katalog footer__katalog" href="#">Смотреть каталог</a>
+          <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A3ed61c2ea4c7b6bd938eacd3968227e75815c5337bf9a4eacd8f309572e0ade9&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe><a class="hero__katalog footer__katalog" href="https://polombardam.shop/merchant/18854" target="_blank">Смотреть каталог</a>
         </div>
       </div>
     </footer>
   </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
   <script src="js/libs/swiper-bundle.min.js"></script>
   <script src="js/script.min.js"></script>
 </html>
