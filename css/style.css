@@ -979,8 +979,8 @@ body,
   display: grid;
   -ms-grid-columns: (1fr)[4];
   grid-template-columns: repeat(4, 1fr);
-  -ms-grid-rows: (238px)[2];
-  grid-template-rows: repeat(2, 238px);
+  -ms-grid-rows: (290px)[2];
+  grid-template-rows: repeat(2, 290px);
   grid-column-gap: 16px;
   grid-row-gap: 16px;
 }
@@ -1241,8 +1241,8 @@ body,
   right: 30px;
 }
 
-.swiper-button-next,
-.swiper-button-prev {
+.swiper-reviwes__swiper-button-next,
+.swiper-reviwes__swiper-button-prev {
   position: absolute;
   top: calc(100% - 44px);
   left: 0;
@@ -1251,21 +1251,27 @@ body,
   width: 64px;
   height: 64px;
 }
-.swiper-button-next::after,
-.swiper-button-prev::after {
+.swiper-reviwes__swiper-button-next::after,
+.swiper-reviwes__swiper-button-prev::after {
+  content: "";
   position: absolute;
-  z-index: 2;
+  z-index: 4;
   font-size: 0;
   width: 5px;
   height: 10px;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   background-image: url(../img/svgicons/arrow.svg);
   background-repeat: no-repeat;
   background-size: contain;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-.swiper-button-next::before,
-.swiper-button-prev::before {
+.swiper-reviwes__swiper-button-next::before,
+.swiper-reviwes__swiper-button-prev::before {
   content: "";
   position: absolute;
   z-index: 1;
@@ -1280,13 +1286,13 @@ body,
   transition: scale 0.3s ease-in-out;
 }
 
-.swiper-button-next:hover::before,
-.swiper-button-prev:hover::before {
+.swiper-reviwes__swiper-button-next:hover::before,
+.swiper-reviwes__swiper-button-prev:hover::before {
   scale: 1;
 }
 
-.swiper-button-next:hover::after,
-.swiper-button-prev:hover::after {
+.swiper-reviwes__swiper-button-next:hover::after,
+.swiper-reviwes__swiper-button-prev:hover::after {
   background-image: url(../img/svgicons/arrow-white.svg);
 }
 
@@ -1297,8 +1303,8 @@ body,
   left: 74px;
 }
 
-.swiper-button-next.swiper-button-disabled,
-.swiper-button-prev.swiper-button-disabled {
+.swiper-reviwes__swiper-button-next.swiper-button-disabled,
+.swiper-reviwes__swiper-button-prev.swiper-button-disabled {
   opacity: 1;
   border: 1px solid var(--dark);
   background-color: transparent;

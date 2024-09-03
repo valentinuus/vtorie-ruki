@@ -166,108 +166,33 @@ items.forEach(item => item.addEventListener('click', toggleAccordion));
 
 
 // // MouseFollower
-// const isTouchDevice = 'ontouchstart' in window;
+const isTouchDevice = 'ontouchstart' in window;
 
-// const createCursorFollower = () => {
-// 	const $el = document.querySelector('.cursor-follower');
+const createCursorFollower = () => {
+	const $el = document.querySelector('.cursor-follower');
 
-// 	// Each time the mouse coordinates are updated, we need to pass the values to gsap in order to animate the element
-// 	window.addEventListener('mousemove', (e) => {
-// 		const { target, x, y } = e;
+	// Each time the mouse coordinates are updated, we need to pass the values to gsap in order to animate the element
+	window.addEventListener('mousemove', (e) => {
+		const { target, x, y } = e;
 
-// 		const isTargetLinkOrBtn = target?.closest('a') || target?.closest('button');
+		const isTargetLinkOrBtn = target?.closest('a') || target?.closest('button');
 
-// 		gsap.to($el, {
-// 			x: x + 3,
-// 			y: y + 3,
-// 			duration: 0.8,
-// 			ease: 'power4', // More easing options here: https://gsap.com/docs/v3/Eases/
-// 			opacity: isTargetLinkOrBtn ? 0.2 : 1,
-// 			transform: `scale(${isTargetLinkOrBtn ? 3 : 1})`,
-// 		});
-// 	});
-// }
+		gsap.to($el, {
+			x: x + 3,
+			y: y + 3,
+			duration: 0.8,
+			ease: 'power4', // More easing options here: https://gsap.com/docs/v3/Eases/
+			opacity: isTargetLinkOrBtn ? 0.2 : 1,
+			transform: `scale(${isTargetLinkOrBtn ? 3 : 1})`,
+		});
+	});
+}
 
-// // Only create the cursor follower if device isn't touchable
-// if (!isTouchDevice) {
-// 	createCursorFollower();
-// }
+// Only create the cursor follower if device isn't touchable
+if (!isTouchDevice) {
+	createCursorFollower();
+}
 // // MouseFollower
 
 
 
-
-/////// temp
-console.clear();
-const element = document.querySelector(".cursor");
-const target = document.querySelector(".target");
-const text = document.querySelector(".text");
-class Cursor {
-	constructor(el, target, text) {
-		this.el = el;
-		this.bind();
-	}
-
-	bind() {
-		document.addEventListener("mousemove", this.move.bind(this), false);
-	}
-
-	move(e) {
-		const cursorPosition = {
-			left: e.clientX,
-			top: e.clientY
-		};
-		for (let i = 0; i < document.querySelectorAll(".target").length; i++) {
-			let single = document.querySelectorAll(".target")[i];
-			const triggerDistance = single.getBoundingClientRect().width;
-			const targetPosition = {
-				left:
-					single.getBoundingClientRect().left +
-					single.getBoundingClientRect().width / 2,
-				top:
-					single.getBoundingClientRect().top +
-					single.getBoundingClientRect().height / 2
-			};
-			const distance = {
-				x: targetPosition.left - cursorPosition.left,
-				y: targetPosition.top - cursorPosition.top
-			};
-			const angle = Math.atan2(distance.x, distance.y);
-			const hypotenuse = Math.sqrt(
-				distance.x * distance.x + distance.y * distance.y
-			);
-			if (hypotenuse < triggerDistance) {
-				if (
-					single.getBoundingClientRect().right +
-					single.getBoundingClientRect().width / 2 >
-					cursorPosition.left
-				) {
-					TweenMax.to(this.el, 0.2, {
-						left: targetPosition.left - (Math.sin(angle) * hypotenuse) / 2,
-						top: targetPosition.top - (Math.cos(angle) * hypotenuse) / 2,
-						height: single.clientHeight,
-						width: single.clientWidth
-					});
-					TweenMax.to(single.querySelector(".text"), 0.2, {
-						x: -((Math.sin(angle) * hypotenuse) / 2),
-						y: -((Math.cos(angle) * hypotenuse) / 2)
-					});
-					break;
-				}
-			} else {
-				TweenMax.to(this.el, 0.2, {
-					left: cursorPosition.left,
-					top: cursorPosition.top,
-					height: "12px",
-					width: "12px"
-				});
-
-				TweenMax.to(single.querySelector(".text"), 0.2, {
-					x: 0,
-					y: 0
-				});
-			}
-		}
-	}
-}
-const cursor = new Cursor(element, target);
