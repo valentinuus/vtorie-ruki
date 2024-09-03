@@ -106,10 +106,10 @@ let mySwiperNav = new Swiper(sliderThumbs, {
 		nextEl: ".swiper-button-next",
 		prevEl: ".swiper-button-prev",
 	},
-	autoplay: {
-		delay: 2500,
-		disableOnInteraction: false,
-	},
+	// autoplay: {
+	// 	delay: 2500,
+	// 	disableOnInteraction: false,
+	// },
 });
 
 const swipeAllSliders = (index) => {
@@ -151,7 +151,6 @@ const items = document.querySelectorAll(".accordion button");
 
 function toggleAccordion() {
 	const itemToggle = this.getAttribute('aria-expanded');
-
 	for (i = 0; i < items.length; i++) {
 		items[i].setAttribute('aria-expanded', 'false');
 	}
@@ -159,7 +158,6 @@ function toggleAccordion() {
 		this.setAttribute('aria-expanded', 'true');
 	}
 }
-
 items.forEach(item => item.addEventListener('click', toggleAccordion));
 //accordion
 
@@ -174,9 +172,7 @@ const createCursorFollower = () => {
 	// Each time the mouse coordinates are updated, we need to pass the values to gsap in order to animate the element
 	window.addEventListener('mousemove', (e) => {
 		const { target, x, y } = e;
-
 		const isTargetLinkOrBtn = target?.closest('a') || target?.closest('button');
-
 		gsap.to($el, {
 			x: x + 3,
 			y: y + 3,
