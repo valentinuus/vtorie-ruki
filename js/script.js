@@ -106,10 +106,10 @@ let mySwiperNav = new Swiper(sliderThumbs, {
 		nextEl: ".swiper-button-next",
 		prevEl: ".swiper-button-prev",
 	},
-	// autoplay: {
-	// 	delay: 2500,
-	// 	disableOnInteraction: false,
-	// },
+	autoplay: {
+		delay: 2500,
+		disableOnInteraction: false,
+	},
 });
 
 const swipeAllSliders = (index) => {
@@ -139,14 +139,14 @@ let mySwiperReviwes = new Swiper(swiperReviwes, {
 });
 
 
-//width swiper-scroll
+//WIDTH SWIPER-SCROLL
 let widthSliderMain = document.querySelector('.swiper-main');
 let widthScrollbar = document.querySelector('.swiper-scrollbar');
 new ResizeObserver(() => widthScrollbar.style.width = widthSliderMain.offsetWidth + 'px').observe(widthSliderMain);
-//width swiper-scroll
+//WIDTH SWIPER-SCROLL
 
 
-//accordion
+//ACCORDION
 const items = document.querySelectorAll(".accordion button");
 
 function toggleAccordion() {
@@ -159,11 +159,11 @@ function toggleAccordion() {
 	}
 }
 items.forEach(item => item.addEventListener('click', toggleAccordion));
-//accordion
+//ACCORDION
 
 
 
-// // MouseFollower
+// // MOUSEFOLLOWER
 const isTouchDevice = 'ontouchstart' in window;
 
 const createCursorFollower = () => {
@@ -188,7 +188,64 @@ const createCursorFollower = () => {
 if (!isTouchDevice) {
 	createCursorFollower();
 }
-// // MouseFollower
+// // MOUSEFOLLOWER
+
+
+// // GSAP
+// gsap.to('.gsap-btn', {
+
+// })
+
+let btn = document.querySelectorAll('.move-btn').forEach(btn => {
+	btn.addEventListener('mousemove', (e) => {
+		let x = e.offsetX;
+		let y = e.offsetY;
+		let btnWidht = btn.clientWidth;
+		let btnHeight = btn.clientHeight;
+		let transX = (x - btnWidht / 2);
+		let transY = (y - btnHeight / 2);
+		btn.style.transform = `translateX(${transX}px) translateY(${transY}px)`
+	})
+	btn.addEventListener('mouseout', (e) => {
+		btn.style.transform = '';
+	})
+})
+
+let btnLarge = document.querySelectorAll('.move-btn-large').forEach(btn => {
+	btn.addEventListener('mousemove', (e) => {
+		let x = e.offsetX;
+		let y = e.offsetY;
+		let btnWidht = btn.clientWidth;
+		let btnHeight = btn.clientHeight;
+		let transX = (x - btnWidht / 1);
+		let transY = (y - btnHeight / 1);
+		btn.style.transform = `translateX(${transX}px) translateY(${transY}px)`
+	})
+	btn.addEventListener('mouseout', (e) => {
+		btn.style.transform = '';
+	})
+})
+
+let btnRevievs = document.querySelectorAll('.reviwes__btn').forEach(btn => {
+	btn.addEventListener('mousemove', (e) => {
+		let x = e.offsetX;
+		let y = e.offsetY;
+		let btnWidht = btn.clientWidth;
+		let btnHeight = btn.clientHeight;
+		let transX = (x - btnWidht / 4);
+		let transY = (y - btnHeight / 2);
+		btn.style.transform = `translateX(${transX}px) translateY(${transY}px)`
+	})
+	btn.addEventListener('mouseout', (e) => {
+		btn.style.transform = '';
+	})
+})
 
 
 
+
+
+
+
+	///////////////////////////////
+	
