@@ -1408,6 +1408,10 @@ body,
             transform: translateX(-50%);
     min-width: 192px;
   }
+  .swiper-reviwes__swiper-button-next,
+  .swiper-reviwes__swiper-button-prev {
+    display: none;
+  }
 }
 @media (max-width: 480px) {
   .swiper-reviwes__slide {
