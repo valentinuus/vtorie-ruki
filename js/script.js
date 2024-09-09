@@ -191,26 +191,7 @@ if (!isTouchDevice) {
 // // MOUSEFOLLOWER
 
 
-// // GSAP
-// gsap.to('.gsap-btn', {
-
-// })
-
-let btn = document.querySelectorAll('.move-btn').forEach(btn => {
-	btn.addEventListener('mousemove', (e) => {
-		let x = e.offsetX;
-		let y = e.offsetY;
-		let btnWidht = btn.clientWidth;
-		let btnHeight = btn.clientHeight;
-		let transX = (x - btnWidht / 2);
-		let transY = (y - btnHeight / 2);
-		btn.style.transform = `translateX(${transX}px) translateY(${transY}px)`
-	})
-	btn.addEventListener('mouseout', (e) => {
-		btn.style.transform = '';
-	})
-})
-
+// // GSAP-BTN
 let btnLarge = document.querySelectorAll('.move-btn-large').forEach(btn => {
 	btn.addEventListener('mousemove', (e) => {
 		let x = e.offsetX;
@@ -225,27 +206,8 @@ let btnLarge = document.querySelectorAll('.move-btn-large').forEach(btn => {
 		btn.style.transform = '';
 	})
 })
+// // GSAP-BTN
 
-let btnRevievs = document.querySelectorAll('.reviwes__btn').forEach(btn => {
-	btn.addEventListener('mousemove', (e) => {
-		let x = e.offsetX;
-		let y = e.offsetY;
-		let btnWidht = btn.clientWidth;
-		let btnHeight = btn.clientHeight;
-		let transX = (x - btnWidht / 4);
-		let transY = (y - btnHeight / 2);
-		btn.style.transform = `translateX(${transX}px) translateY(${transY}px)`
-	})
-	btn.addEventListener('mouseout', (e) => {
-		btn.style.transform = '';
-	})
-})
+// // GSAP-EMEGENS
 
-
-
-
-
-
-
-	///////////////////////////////
-	
+gsap.from('.service__title',{opacity: 0, duration: 5, delay: 2})

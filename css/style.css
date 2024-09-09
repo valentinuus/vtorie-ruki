@@ -1323,25 +1323,48 @@ body,
 .swiper-reviwes__swiper-button-next,
 .swiper-reviwes__swiper-button-prev {
   top: 110px;
-  left: 0;
+  left: 15px;
 }
 
 .swiper-reviwes__swiper-button-next {
-  left: 74px;
+  left: 85px;
 }
 
 .reviwes__btn {
   position: absolute;
   z-index: 50;
   bottom: 0;
-  left: 0;
+  left: 16px;
   border: 1px solid var(--accent);
   border-radius: 118px;
   padding: 30px 45px;
-  -webkit-transition: 1s;
-  transition: 1s;
+  -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
   font-size: 14px;
   color: var(--accent);
+  overflow: hidden;
+}
+.reviwes__btn:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 118px;
+  background-color: #fff;
+  scale: 0;
+  -webkit-transition: scale 0.3s ease-in-out, background-color 0.1s ease-in-out;
+  transition: scale 0.3s ease-in-out, background-color 0.1s ease-in-out;
+}
+
+.reviwes__btn:hover {
+  color: #fff;
+}
+.reviwes__btn:hover:before {
+  background-color: var(--accent);
+  scale: 1;
 }
 
 @media (max-width: 900px) {
