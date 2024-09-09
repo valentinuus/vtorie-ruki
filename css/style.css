@@ -1619,13 +1619,13 @@ body,
 }
 
 .footer__tel-block {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .footer__tel {
   display: block;
   font-size: 52px;
-  line-height: 150%;
+  line-height: 130%;
   color: var(--dark);
 }
 
