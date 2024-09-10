@@ -208,6 +208,12 @@ let btnLarge = document.querySelectorAll('.move-btn-large').forEach(btn => {
 })
 // // GSAP-BTN
 
-// // GSAP-EMEGENS
+// //анимация
 
-gsap.from('.service__title',{opacity: 0, duration: 5, delay: 2})
+new WOW({
+	boxClass: 'wow', // default
+	animateClass: 'animated', // default
+	offset: 10, // default
+	mobile: true, // default
+	live: true // default
+}).init();
